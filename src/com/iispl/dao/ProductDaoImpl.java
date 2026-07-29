@@ -72,9 +72,10 @@ public class ProductDaoImpl implements ProductDao{
 
         List<Product> productList = new ArrayList<>();
 
-        try (Connection connection = ConnectionPool.getDataSource().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(
-                     "SELECT * FROM product")) {
+        try  {
+        	
+        	Connection connection = ConnectionPool.getDataSource().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM product");
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
