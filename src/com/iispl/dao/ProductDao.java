@@ -11,6 +11,7 @@ public interface ProductDao {
 
 	public void deleteProduct(String productCode);
 	
+	public Product getProduct(String productCode);
 //	for Show product list
 	public List<Product> listAllProducts();
 
