@@ -32,6 +32,7 @@ public class ProductDaoImpl implements ProductDao{
 			System.out.println("Product saved successfully");
 			connection.close();
 			
+			
 		}catch(SQLException e)
 		{
 		e.printStackTrace();	
