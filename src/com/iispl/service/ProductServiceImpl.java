@@ -1,5 +1,7 @@
 package com.iispl.service;
 
+import java.util.List;
+
 import com.iispl.dao.ProductDao;
 import com.iispl.dao.ProductDaoImpl;
 import com.iispl.model.Product;
@@ -12,5 +14,8 @@ public class ProductServiceImpl implements ProductService{
 	public void saveProduct(Product product) {
 		productDao.saveProduct(product);
 	}
-
+	@Override
+    public List<Product> listAllProducts() {
+        return productDao.listAllProducts();
+    }
 }
