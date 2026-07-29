@@ -7,5 +7,8 @@ import com.iispl.model.Product;
 public interface ProductDao {
 
 	public void saveProduct(Product product);
+	
+//	for Show product list
 	public List<Product> listAllProducts();
+	
 }
