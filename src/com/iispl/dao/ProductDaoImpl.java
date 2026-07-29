@@ -96,4 +96,42 @@ public class ProductDaoImpl implements ProductDao{
 
         return productList;
     }
+
+	@Override
+    public Product getProduct(String productCode) {
+
+        Product product = null;
+
+        String sql = "SELECT * FROM product WHERE product_code=?";
+
+        try {
+
+            DataSource ds = ConnectionPool.getDataSource();
+            Connection connection = ds.getConnection();
+
+            PreparedStatement ps = connection.prepareStatement(sql);
+
+            ps.setString(1, productCode);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+                product = new Product(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDate(4).toLocalDate(),
+                        rs.getDate(5).toLocalDate());
+
+            }
+
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return product;
+    }
 }

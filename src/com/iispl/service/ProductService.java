@@ -10,6 +10,7 @@ public interface ProductService {
 // feature/DeleteProduct
 	void deleteProduct(String productCode);
 
+	public Product getProduct(String productCode);
 	
 	public List<Product> listAllProducts();
 }
