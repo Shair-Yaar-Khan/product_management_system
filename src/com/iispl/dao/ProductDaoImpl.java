@@ -123,7 +123,6 @@ public class ProductDaoImpl implements ProductDao{
                         rs.getString(3),
                         rs.getDate(4).toLocalDate(),
                         rs.getDate(5).toLocalDate());
-
             }
 
             connection.close();
