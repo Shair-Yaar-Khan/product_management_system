@@ -21,6 +21,8 @@ public class ConnectionPool {
 			
 			property.load(inputStream);
 			
+			dataSource = new ComboPooledDataSource();
+			
 			dataSource.setDriverClass(property.getProperty("DRIVER_CLASS"));
 			dataSource.setJdbcUrl(property.getProperty("CONNECTION_STRING"));
 			dataSource.setUser(property.getProperty("USERNAME"));
@@ -31,7 +33,7 @@ public class ConnectionPool {
 		}
 	}
 	
-	public javax.sql.DataSource getDataSource(){
+	public static javax.sql.DataSource getDataSource(){
 		return dataSource;
 	}
 }
