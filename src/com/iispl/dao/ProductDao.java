@@ -7,8 +7,11 @@ import com.iispl.model.Product;
 public interface ProductDao {
 
 	public void saveProduct(Product product);
+// feature/DeleteProduct
+
+	public void deleteProduct(String productCode);
 	
 //	for Show product list
 	public List<Product> listAllProducts();
-	
+
 }
