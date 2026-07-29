@@ -5,4 +5,5 @@ import com.iispl.model.Product;
 public interface ProductService {
 
 	public void saveProduct(Product product);
+	void deleteProduct(String productCode);
 }

@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import com.iispl.connectionpool.ConnectionPool;
 import com.iispl.model.Product;
 
@@ -37,6 +39,27 @@ public class ProductDaoImpl implements ProductDao{
 		}catch(SQLException e)
 		{
 		e.printStackTrace();	
+		}
+		
+	}
+
+	@Override
+	public void deleteProduct(String productCode) {
+		Connection connection=null;
+		PreparedStatement prepStmt=null;
+		String deleteSql="Delete from product where product_code=?";
+		try {
+			DataSource ds=ConnectionPool.getDataSource();
+			connection=ds.getConnection();
+			prepStmt=connection.prepareStatement(deleteSql);
+			prepStmt.setString(1, productCode);
+			int result=prepStmt.executeUpdate();
+			 if(result>0) {
+				 System.out.println( result + " ROW Deleted");
+			 }
+			
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
 		}
 		
 	}
