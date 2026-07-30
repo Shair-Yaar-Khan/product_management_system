@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductService{
 		
 	}
 
-	
+	//list all products
 	@Override
     public List<Product> listAllProducts() {
         return productDao.listAllProducts();

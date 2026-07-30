@@ -11,6 +11,6 @@ public interface ProductService {
 	void deleteProduct(String productCode);
 	//feature/getProduct
 	public Product getProduct(String productCode);
-	
+	//list all products
 	public List<Product> listAllProducts();
 }
