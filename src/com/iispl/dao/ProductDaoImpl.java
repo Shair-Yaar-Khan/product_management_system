@@ -96,7 +96,7 @@ public class ProductDaoImpl implements ProductDao{
 
         return productList;
     }
-
+	//getProduct method 
 	@Override
     public Product getProduct(String productCode) {
 

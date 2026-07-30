@@ -7,9 +7,9 @@ import com.iispl.model.Product;
 public interface ProductService {
 
 	public void saveProduct(Product product);
-// feature/DeleteProduct
+	// feature/DeleteProduct
 	void deleteProduct(String productCode);
-
+	//feature/getProduct
 	public Product getProduct(String productCode);
 	
 	public List<Product> listAllProducts();
